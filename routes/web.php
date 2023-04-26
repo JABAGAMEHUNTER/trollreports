@@ -15,6 +15,11 @@ use Laravel\Socialite\Facades\Socialite;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+/*Route::get('/auth/redirect', function() {
+	return Socialite::driver('github')->redirect();
+});
+*/
+
 Route::get('/auth/redirect', function() {
 	return Socialite::driver('github')->redirect();
 });
@@ -31,8 +36,8 @@ Route::get('/auth/callback', function() {
 	]);
 
 	Auth::login($user);
-	//$user = Socialite::driver('github')->user();
-	//$user->token
+	$user = Socialite::driver('github')->user();
+	$user->token
 	return redirect('/dashboard');
 });
 

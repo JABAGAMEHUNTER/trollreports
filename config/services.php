@@ -33,7 +33,7 @@ return [
     'github' => [
 	'client_id' => env('GITHUB_CLIENT_ID'),
 	'client_secret' => env('GITHUB_CLIENT_SECRET'),
-	'redirect' => '/',
+	'redirect' => 'http://localhost/php/example-app/public/index.php/auth/callback',
     ],
 
 ];
