@@ -9,11 +9,11 @@ Route::get('/users', [UserController::class, 'index']);
 Route::post('/users', [UserController::class, 'store']);
 
 Route::get('/auth/redirect', function () {
-    return Socialite::driver('github')->redirect();
+    return Socialite::driver('github')->stateless()->redirect();
 });
 
 Route::get('/auth/callback', function (){
-    $user = Socialite::driver('github')->user();
+    $user = Socialite::driver('github')->stateless()->user();
 });
 
 Route::get('/', function() {
