@@ -8,11 +8,10 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
-//use Illuminate\Database\Eloquest\Model;
-//use Illuminate\Support\Facades\Hash;
+use Illuminate\Database\Eloquest\Model;
+use Illuminate\Support\Facades\Hash;
 
 class User extends Authenticatable
-//class User extends Model
 {
     use HasApiTokens, HasFactory, Notifiable;
 
@@ -50,8 +49,8 @@ class User extends Authenticatable
     {
         return parent::create([
             'name' => $fields['name'],
-            'email' => $fiels['email'],
-            'password' => Hash::make($fields['passwords']),
+            'email' => $fields['email'],
+            'password' => Hash::make($fields['password']),
         ]);
     }
 }

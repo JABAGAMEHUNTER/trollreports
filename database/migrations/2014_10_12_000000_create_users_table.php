@@ -20,7 +20,7 @@ return new class extends Migration
             $table->rememberToken();
             $table->timestamps();
             $table->string('provider_name')->nullable();
-            $table->string('provider_id')-nullable();
+            $table->string('provider_id')->nullable();
         });
     }
 
