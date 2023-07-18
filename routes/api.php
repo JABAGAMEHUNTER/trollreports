@@ -23,6 +23,9 @@ Route::get('/', function() {
         ]);
 });
 
+#rotas steam
+Route::get('/steam/users', [UserController::class, 'items']);
+
 #rotas do sanctum (autenticador)
 
 Route::prefix('auth')->group(function() {
